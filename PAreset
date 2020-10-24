@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Do you want x11 pulseaudio or wayland pulseaudio?"
+read choice
+if [ $choice == x11 ]
+then
+ killall pulseaudio
+ killall start-pulseaudio-x11
+ start-pulseaudio-x11
+ echo "Have a nice day. Pulseaudio has been reset."
+else
+    killall pulseaudio
+    pulseaudio
+    echo "Goodbye. Thank you for using this program."
+fi
+
